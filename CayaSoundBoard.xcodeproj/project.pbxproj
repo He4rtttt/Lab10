@@ -14,6 +14,9 @@
 		46E8C4272CB490D90068B9A7 /* CayaSoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46E8C4252CB490D90068B9A7 /* CayaSoundBoard.xcdatamodeld */; };
 		46E8C4292CB490DB0068B9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E8C4282CB490DB0068B9A7 /* Assets.xcassets */; };
 		46E8C42C2CB490DB0068B9A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46E8C42A2CB490DB0068B9A7 /* LaunchScreen.storyboard */; };
+		46E8C43A2CB497220068B9A7 /* grabar.png in Resources */ = {isa = PBXBuildFile; fileRef = 46E8C4392CB497220068B9A7 /* grabar.png */; };
+		46E8C43C2CB497340068B9A7 /* reproducir.png in Resources */ = {isa = PBXBuildFile; fileRef = 46E8C43B2CB497340068B9A7 /* reproducir.png */; };
+		46E8C43E2CB4994B0068B9A7 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E8C43D2CB4994B0068B9A7 /* SoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		46E8C4282CB490DB0068B9A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46E8C42B2CB490DB0068B9A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46E8C42D2CB490DB0068B9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46E8C4392CB497220068B9A7 /* grabar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grabar.png; sourceTree = "<group>"; };
+		46E8C43B2CB497340068B9A7 /* reproducir.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reproducir.png; sourceTree = "<group>"; };
+		46E8C43D2CB4994B0068B9A7 /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				46E8C42A2CB490DB0068B9A7 /* LaunchScreen.storyboard */,
 				46E8C42D2CB490DB0068B9A7 /* Info.plist */,
 				46E8C4252CB490D90068B9A7 /* CayaSoundBoard.xcdatamodeld */,
+				46E8C4392CB497220068B9A7 /* grabar.png */,
+				46E8C43B2CB497340068B9A7 /* reproducir.png */,
+				46E8C43D2CB4994B0068B9A7 /* SoundViewController.swift */,
 			);
 			path = CayaSoundBoard;
 			sourceTree = "<group>";
@@ -128,6 +137,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E8C43A2CB497220068B9A7 /* grabar.png in Resources */,
+				46E8C43C2CB497340068B9A7 /* reproducir.png in Resources */,
 				46E8C42C2CB490DB0068B9A7 /* LaunchScreen.storyboard in Resources */,
 				46E8C4292CB490DB0068B9A7 /* Assets.xcassets in Resources */,
 				46E8C4242CB490D90068B9A7 /* Main.storyboard in Resources */,
@@ -145,6 +156,7 @@
 				46E8C41D2CB490D90068B9A7 /* AppDelegate.swift in Sources */,
 				46E8C4272CB490D90068B9A7 /* CayaSoundBoard.xcdatamodeld in Sources */,
 				46E8C41F2CB490D90068B9A7 /* SceneDelegate.swift in Sources */,
+				46E8C43E2CB4994B0068B9A7 /* SoundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
