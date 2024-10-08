@@ -8,10 +8,18 @@ class SoundViewController: UIViewController {
     @IBOutlet weak var nombreTextField: UITextField!
     @IBOutlet weak var agregarButton: UIButton!
     
+    @IBOutlet weak var recordingTimeLabel: UILabel!
     var grabarAudio: AVAudioRecorder?
     var reproducirAudio:AVAudioPlayer?
     var audioURL:URL?
+    var timer: Timer?
+    var recordingTime: Int = 0
     
+    @IBOutlet weak var volumeSlider: UISlider!
+    
+    @IBAction func volumeChanged(_ sender: UISlider) {
+        reproducirAudio?.volume = sender.value
+    }
     @IBAction func grabarTapped(_ sender: Any) {
         guard let grabarAudio = grabarAudio else {
             print("Error: grabarAudio no está inicializado")
@@ -20,17 +28,25 @@ class SoundViewController: UIViewController {
         
         if grabarAudio.isRecording {
             grabarAudio.stop()
+            timer?.invalidate() // Detener el temporizador
             grabarButton.setTitle("GRABAR", for: .normal)
             reproducirButton.isEnabled = true
             agregarButton.isEnabled = true
         } else {
             grabarAudio.record()
+            recordingTime = 0 // Reiniciar el tiempo
+            recordingTimeLabel.text = "0s" // Reiniciar el label
             grabarButton.setTitle("DETENER", for: .normal)
             reproducirButton.isEnabled = true
             
+            // Iniciar el temporizador
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+                self?.recordingTime += 1
+                self?.recordingTimeLabel.text = "\(self?.recordingTime ?? 0)s"
+            }
         }
     }
-    
+
     @IBAction func reproducirTapped(_ sender: Any) {
         do{
            try reproducirAudio = AVAudioPlayer(contentsOf: audioURL!)
@@ -44,11 +60,11 @@ class SoundViewController: UIViewController {
         let grabacion = Grabacion(context: context)
         grabacion.nombre = nombreTextField.text
         grabacion.audio = NSData(contentsOf: audioURL!)! as Data
+        grabacion.tiempo = Int32(recordingTime) // Guardar el tiempo
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
-        
     }
-    
+
     func configurarGrabacion() {
         do {
             // Creando sesión de audio
